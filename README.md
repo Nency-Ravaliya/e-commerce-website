@@ -32,6 +32,16 @@ Security Groups:
 Ansible:
 ![image](https://github.com/user-attachments/assets/77649a8d-d425-4ee5-afbc-679a4e4e5c1a)
 ![image](https://github.com/user-attachments/assets/e91654cd-f779-4dfd-902f-191054fd7ff2)
+![image](https://github.com/user-attachments/assets/80949249-966c-479a-b703-da32c2e5fa33)
+![image](https://github.com/user-attachments/assets/a27c6df5-2636-439a-865a-2f38106dd1f3)
+![image](https://github.com/user-attachments/assets/6cec352f-a627-4866-99f5-a82284e335b2)
+![image](https://github.com/user-attachments/assets/40abedaa-e570-44ae-b62a-06fdb8e33412)
+![image](https://github.com/user-attachments/assets/c650fbbe-3ef1-46ce-bfb7-76a5a17d9f4b)
+
+
+
+
+
 
 
 
