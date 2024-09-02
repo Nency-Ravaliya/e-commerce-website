@@ -37,6 +37,8 @@ Ansible:
 ![image](https://github.com/user-attachments/assets/6cec352f-a627-4866-99f5-a82284e335b2)
 ![image](https://github.com/user-attachments/assets/40abedaa-e570-44ae-b62a-06fdb8e33412)
 ![image](https://github.com/user-attachments/assets/c650fbbe-3ef1-46ce-bfb7-76a5a17d9f4b)
+![image](https://github.com/user-attachments/assets/85a69455-34e6-4900-8c47-1fe040a35647)
+
 
 
 
