@@ -5,5 +5,37 @@
 ![image](https://github.com/user-attachments/assets/4d439506-c2f8-4240-9f29-c8b12defd526)
 ![image](https://github.com/user-attachments/assets/852bca63-6dc6-48c5-94c9-977b84de1aa2)
 
+Master and Worker Nodes:
+
+![image](https://github.com/user-attachments/assets/56d8c66d-227b-4e24-8fd4-05efc1a98edd)
+
+S3 Bucket:
+![image](https://github.com/user-attachments/assets/8b988d9d-8ecc-41cd-b69c-91b4e3a5e792)
+
+VPC and Subnets:
+![image](https://github.com/user-attachments/assets/c6367001-1315-4abb-8e80-68a923e37b21)
+![image](https://github.com/user-attachments/assets/42698034-ce6a-4049-98da-63801524183b)
+![image](https://github.com/user-attachments/assets/b12e8ac2-6b50-485c-9590-4b858a226766)
+
+Route table:
+![image](https://github.com/user-attachments/assets/6cee16c3-b764-401f-8957-eddca9d2be4e)
+
+Internet Gateway:
+![image](https://github.com/user-attachments/assets/f02e1d8c-c525-4709-b78d-0753f084813b)
+
+Security Groups:
+![image](https://github.com/user-attachments/assets/55dccde6-cbee-452a-b6fd-efd6aac2aaf2)
+![image](https://github.com/user-attachments/assets/19e03eea-edce-4e7d-852d-c179674abf36)
+![image](https://github.com/user-attachments/assets/826d11a4-39c7-4860-bb3c-e9c7eeed4645)
+![image](https://github.com/user-attachments/assets/997eb0c7-220a-46c8-b724-b2559550d0e4)
+
+
+
+
+
+
+
+
+
 
 
