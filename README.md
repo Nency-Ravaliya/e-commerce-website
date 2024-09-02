@@ -39,6 +39,10 @@ Ansible:
 ![image](https://github.com/user-attachments/assets/c650fbbe-3ef1-46ce-bfb7-76a5a17d9f4b)
 ![image](https://github.com/user-attachments/assets/85a69455-34e6-4900-8c47-1fe040a35647)
 
+Master node: All the nodes are ready and Helm is installed.
+![image](https://github.com/user-attachments/assets/a8a2f7ed-67e2-4ed5-a73d-1d9b18a78c4c)
+
+
 
 
 
