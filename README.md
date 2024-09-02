@@ -30,7 +30,8 @@ Security Groups:
 ![image](https://github.com/user-attachments/assets/997eb0c7-220a-46c8-b724-b2559550d0e4)
 
 Ansible:
-![image](https://github.com/user-attachments/assets/bd097127-31df-46ea-8fd3-2ab4c0902a6b)
+![image](https://github.com/user-attachments/assets/77649a8d-d425-4ee5-afbc-679a4e4e5c1a)
+
 
 
 
