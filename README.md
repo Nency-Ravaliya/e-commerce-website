@@ -20,6 +20,19 @@ This project involves setting up a Kubernetes cluster on AWS and configuring CI/
   - **Security Groups:** To control access to instances
   - **Subnets:** Public and private subnets for network isolation
 
+#### Run Terraform
+
+1. **Navigate to the Terraform Directory:**
+   ```bash
+   cd path/to/terraform/directory
+   terraform init
+   terraform fmt
+   terraform validate
+   terraform plan
+   terraform apply
+   #terraform destroy
+   ```
+   
 ### 2. Master Node Configuration
 
 - **Tools Used:** Ansible
@@ -31,6 +44,16 @@ This project involves setting up a Kubernetes cluster on AWS and configuring CI/
     - **`master.yml`**: Configures the master node
     - **`workers.yml`**: Configures the worker nodes
     - **`helm.yml`**: Installs and configures Helm
+   
+### Run Ansible
+
+```
+ansible all -i path/to/inventory/file -m ping
+ansible-playbook -i path/to/inventory/file kube-dependencies.yml
+ansible-playbook -i path/to/inventory/file master.yml
+ansible-playbook -i path/to/inventory/file workers.yml
+ansible-playbook -i path/to/inventory/file helm.yml
+```
 
 ### 3. Jenkins Installation and Configuration
 
@@ -144,6 +167,7 @@ Mater node:
 ![image](https://github.com/user-attachments/assets/01aa0d7b-993b-41ef-8fae-465462b13ec6)
 ![image](https://github.com/user-attachments/assets/8b5689e1-a0bf-4c0f-ab03-10ef03891b5d)
 ![image](https://github.com/user-attachments/assets/10b41388-f69a-4f8e-963c-a44058642ae3)
+![image](https://github.com/user-attachments/assets/1678a5f7-1dcd-48ae-ac97-b570f2d1a4fc)
 
 
 ![image](https://github.com/user-attachments/assets/50889d9b-7aa7-49f2-bb6b-ed0cca8ad423)
