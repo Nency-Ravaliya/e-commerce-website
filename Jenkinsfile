@@ -1,40 +1,65 @@
 pipeline {
     agent any
-
     environment {
-        DOCKER_IMAGE = "your-dockerhub-username/your-app:${env.BUILD_ID}"
-        HELM_RELEASE_NAME = "your-app"
-        HELM_CHART_PATH = "./your-app-chart"
+        // DockerHub credentials
+        DOCKER_CREDENTIALS_ID = 'nensiravaliya28'
+        // DockerHub repository
+        DOCKER_REPO = 'nensiravaliya28/ecommerce'
+        // GitHub credentials
+        GIT_CREDENTIALS_ID = 'gtk0'
+        // Kubernetes context (e.g., minikube, eks)
+        KUBE_CONTEXT = 'your-kubernetes-context'
+        // Helm release name
+        HELM_RELEASE = 'ecommerce-release'
+        // Kubernetes namespace
+        KUBE_NAMESPACE = 'default'
     }
-
     stages {
-        stage('Checkout') {
+        stage('Clone Repository') {
             steps {
-                checkout scm
+                git credentialsId: "${GIT_CREDENTIALS_ID}", url: 'https://github.com/Nency-Ravaliya/Day38-devops.git', branch: 'main'
             }
         }
         stage('Build Docker Image') {
             steps {
                 script {
-                    dockerImage = docker.build(DOCKER_IMAGE)
+                    // Build the Docker image and tag it with BUILD_ID
+                    def image = docker.build("${DOCKER_REPO}:${env.BUILD_ID}", "-f Dockerfile ./app")
                 }
             }
         }
         stage('Push Docker Image') {
             steps {
                 script {
-                    docker.withRegistry('https://registry.hub.docker.com', 'dockerhub-credentials') {
-                        dockerImage.push()
+                    // Push the image with both the BUILD_ID tag and the 'latest' tag
+                    docker.withRegistry('https://index.docker.io/v1/', "${DOCKER_CREDENTIALS_ID}") {
+                        def image = docker.image("${DOCKER_REPO}:${env.BUILD_ID}")
+                        image.push("${env.BUILD_ID}") // Push with BUILD_ID tag
+                        image.push('latest') // Optionally, also push with 'latest' tag
                     }
                 }
             }
         }
-        stage('Deploy with Helm') {
+        stage('Deploy to Kubernetes') {
             steps {
                 script {
-                    sh "helm upgrade --install ${HELM_RELEASE_NAME} ${HELM_CHART_PATH} --set image.repository=${DOCKER_IMAGE}"
+                    // Use Helm to deploy the Docker image to Kubernetes
+                    withKubeConfig([credentialsId: 'kubeconfig-id', contextName: "${KUBE_CONTEXT}"]) {
+                        sh """
+                        helm upgrade --install ${HELM_RELEASE} ./helm-chart \
+                            --set image.repository=${DOCKER_REPO} \
+                            --set image.tag=${env.BUILD_ID} \
+                            --namespace ${KUBE_NAMESPACE}
+                        """
+                    }
                 }
             }
         }
     }
+    post {
+        always {
+            cleanWs()
+        }
+    }
 }
+
