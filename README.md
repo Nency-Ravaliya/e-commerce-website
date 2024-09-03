@@ -1,3 +1,98 @@
+# DevOps Project: Kubernetes Deployment with Jenkins CI/CD
+
+## Overview
+
+This project involves setting up a Kubernetes cluster on AWS and configuring CI/CD pipelines with Jenkins. The project covers infrastructure provisioning using Terraform, configuration management with Ansible, and deploying an e-commerce application using Jenkins and Kubernetes.
+
+## Project Steps
+
+### 1. Infrastructure Provisioning
+
+- **Tools Used:** Terraform
+- **Resources Provisioned:**
+  - **VPC:** Virtual Private Cloud
+  - **Internet Gateway:** For internet access
+  - **EC2 Instances:**
+    - **Master Node:** Central node for Kubernetes control
+    - **Worker Nodes:** Nodes for running application workloads
+  - **S3 Bucket:** For storage needs
+  - **Route Tables:** To manage traffic routing
+  - **Security Groups:** To control access to instances
+  - **Subnets:** Public and private subnets for network isolation
+
+### 2. Master Node Configuration
+
+- **Tools Used:** Ansible
+- **Tasks Performed:**
+  - Installed Kubernetes components (`kubeadm`, `kubelet`, `kubectl`)
+  - Configured the master node and initialized the Kubernetes cluster
+  - Connected worker nodes to the master node using Ansible playbooks:
+    - **`kube-dependencies.yml`**: Installs required dependencies
+    - **`master.yml`**: Configures the master node
+    - **`workers.yml`**: Configures the worker nodes
+    - **`helm.yml`**: Installs and configures Helm
+
+### 3. Jenkins Installation and Configuration
+
+- **Tools Used:** Helm
+- **Steps:**
+  - Installed Helm on the master node
+  - Deployed Jenkins using Helm charts on the Kubernetes cluster
+  - Configured Jenkins with necessary plugins for CI/CD
+
+### 4. CI/CD Pipeline Setup
+
+- **Repository:** [Day38-devops](https://github.com/Nency-Ravaliya/Day38-devops)
+- **Pipeline Includes:**
+  - **Source Code Checkout:** Pulls code from GitHub
+  - **Build Docker Image:** Builds Docker images from the Dockerfile
+  - **Push Docker Image:** Pushes Docker images to Docker Hub
+  - **Deploy to Kubernetes:** Deploys the Docker image to Kubernetes using Helm
+  - **Print Logs:** Fetches logs from the deployment for verification
+
+### 5. Application Deployment
+
+- **Application:** E-commerce application
+- **Steps:**
+  - Built and pushed Docker image of the Node.js application
+  - Deployed the application on Kubernetes worker nodes
+  - Exposed the application using a Kubernetes Service
+
+## Project Files
+
+- **Terraform Configuration:** Defines AWS infrastructure
+- **Ansible Playbooks:** Configures Kubernetes and Helm
+- **Jenkins Pipeline:** Automates the CI/CD process
+- **Dockerfile:** Defines the Docker image for the Node.js application
+- **Node.js Application:** Source code for the application
+
+## Usage
+
+1. **Provision Infrastructure:**
+   - Run Terraform scripts to create AWS resources.
+
+2. **Configure Nodes:**
+   - Use Ansible playbooks to set up the master and worker nodes.
+
+3. **Install Jenkins:**
+   - Deploy Jenkins using Helm and configure it for CI/CD.
+
+4. **Run Pipeline:**
+   - Use Jenkins to build, push, and deploy the Docker image.
+
+5. **Deploy Application:**
+   - The e-commerce application will be deployed on Kubernetes.
+
+## References
+
+- [Terraform Documentation](https://www.terraform.io/docs)
+- [Ansible Documentation](https://docs.ansible.com/)
+- [Jenkins Documentation](https://www.jenkins.io/doc/)
+- [Kubernetes Documentation](https://kubernetes.io/docs/)
+
+For more detailed information on each step, please refer to the respective scripts and configuration files in this repository.
+
+
 # Day38-devops
 
 ![image](https://github.com/user-attachments/assets/c7a63997-df79-4d25-957e-835edcdc1f64)
